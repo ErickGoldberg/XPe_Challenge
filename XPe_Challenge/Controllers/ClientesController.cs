@@ -55,7 +55,6 @@ namespace XPe_Challenge.Controllers
         public async Task<ActionResult<Cliente>> Create([FromBody] Cliente cliente)
         {
             var novoCliente = await _clienteService.CreateAsync(cliente);
-            // Retorna o objeto criado com sua rota de acesso
             return CreatedAtAction(nameof(GetById), new { id = novoCliente.Id }, novoCliente);
         }
 

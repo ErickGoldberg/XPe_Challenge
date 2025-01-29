@@ -16,11 +16,20 @@ builder.Services.AddScoped<IClienteService, ClienteService>();
 // 3) Adicionar Controllers 
 builder.Services.AddControllers();
 
+builder.Services.AddEndpointsApiExplorer(); 
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
+}
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseRouting();
