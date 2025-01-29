@@ -1,0 +1,6 @@
+@XPe_Challenge_HostAddress = http://localhost:5241
+
+GET {{XPe_Challenge_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
